@@ -20,9 +20,11 @@ class LiterationSample extends Component {
         });
     }
 
-    delete = (e) => {
+    delete = (index) => {
+        console.log(index);
+        const {names} = this.state;
         this.setState({
-            names: this.state.names
+            names: names.filter((i) => i !== index)
         });
     }
 
@@ -30,9 +32,7 @@ class LiterationSample extends Component {
         
         const nameList = this.state.names.map(
             (name, index) => 
-                            <>
-                            <li key={index}>{name} <button onClick={this.delete}>delete</button> </li>
-                            </>
+                            (<li key={index} onDoubleClick={this.delete}>{name}</li>)
         );
 
         return (
