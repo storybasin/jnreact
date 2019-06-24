@@ -1,0 +1,8 @@
+.success {
+    background-color: lawngreen;
+}
+.failure {
+    background-color: red;
+    background: linear-gradient(white,black)
+}
+
